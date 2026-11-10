@@ -147,6 +147,52 @@ body{overflow-x:hidden}
 @media(max-width:760px){#backToTop{right:14px;bottom:15px;width:42px;height:42px}.hero-photo{background-position:65% center;animation-duration:23s}.motion-ready .reveal{transform:translate3d(0,22px,0)}.hero{min-height:690px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.motion-ready .reveal{opacity:1!important;transform:none!important}#catalogIntro{display:none!important}}
 
+/* AIRVISTA mobile hero V3: preserve the full aircraft, including its tail emblem. */
+@media (max-width: 760px) {
+  .hero {
+    min-height: 0;
+    display: block;
+    background: #071b35;
+    isolation: isolate;
+  }
+  .hero-photo {
+    /* 1080 × 608 artwork: on narrow screens show it uncropped above the copy. */
+    inset: 72px 0 auto;
+    height: 56.2963vw;
+    background-image:
+      linear-gradient(180deg, transparent 61%, rgba(7,27,53,.04) 72%, #071b35 100%),
+      url('assets/branded-aircraft-flight.webp');
+    background-size: 100% 100%, 100% auto;
+    background-position: center, center top;
+    background-repeat: no-repeat;
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+  .hero:after { display: none; }
+  .hero:before {
+    background: radial-gradient(ellipse at 92% 95%, rgba(178,38,55,.14), transparent 56%);
+  }
+  .hero .container {
+    padding-top: calc(72px + 56.2963vw + 20px);
+    padding-bottom: 46px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 10.2vw, 66px);
+    line-height: 1.08;
+    margin: 16px 0 17px;
+  }
+  .hero p { font-size: 15px; line-height: 1.7; }
+  .hero .eyebrow { font-size: 9px; letter-spacing: .16em; }
+  .hero-actions { gap: 10px; margin-top: 24px; }
+  .hero-actions .btn { min-height: 48px; white-space: normal; text-align: center; }
+  .hero-bottom { margin-top: 34px; line-height: 1.8; }
+}
+@media (max-width: 390px) {
+  .hero h1 { font-size: clamp(36px, 10.1vw, 40px); }
+  .hero-actions .btn { width: 100%; }
+}
+
 </style>
 </head>
 <body><noscript><style>#catalogIntro{display:none!important}</style></noscript><div id="readingProgress" aria-hidden="true"></div><div id="catalogIntro" aria-label="Opening AIRVISTA catalog"><div class="intro-inner"><img class="intro-logo" src="assets/original-gold-logo.webp" alt="AIRVISTA symbol"><div class="intro-word">AIRVISTA</div><div class="intro-sub">FLIGHT ACADEMY</div><div class="intro-line"></div></div></div>
